@@ -1,6 +1,20 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<h1>Hello World</h1>
+<div class="jumbotron">
+    <h1 class="display-4">{{apitemp}} &#8451</h1>
+    <p class="lead">Currently Temparature in {{api.name}},{{api.sys.country}} feels like {{feels_like}} &#8451 and humidity {{api.main.humidity}}%</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  </div>
+<div class="jumbotron {{description_color}}">
+    <h1 class="display-4">AQI Index : {{pol.list.0.main.aqi}}</h1>
+    <p class="lead">Currently Air in London has CO: {{pol.list.0.components.co}}, NO:{{pol.list.0.components.NO}} and PM:{{pol.list.0.components.pm2_5}}</p>
+    <hr class="my-4">
+    <p>{{description}}</p>
+</div>
+<br>
+<br/>
 
 {% endblock %}
+
